@@ -61,7 +61,7 @@ $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zs
 10. Move the custom theme into the theme folder
 
 ```
-$ cp -R sorin_luva.zsh-theme ~/.oh-my-zsh/custom/themes/
+$ cp -R sorin_luca.zsh-theme ~/.oh-my-zsh/custom/themes/
 ```
 
 11. Sync dotfiles. The bootstrapper script will pull in the latest version and copy the files to your home folder.
