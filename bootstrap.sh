@@ -15,6 +15,6 @@ function doIt() {
 	source ~/.bash_profile;
 }
 
-read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
+doIt;
 
 unset doIt;
