@@ -25,8 +25,9 @@ Follow these install instructions to make your new setup feel like home:
 2. Install Xcode from the App Store.
 3. White Xcode is installing, you could:
    - fix display resolution: System Preferences > Displays > Resolution > Scaled > More Space 
-   - change desktop image: System Preferences > Desktop & Screensaver > Colours > #242526
-   - change desktop image: System Preferences > Dock & Menu Bar > Automaticall hide and show the Dock
+   - change desktop image: System Preferences > Desktop & Screensaver > Colours > #1D262A
+   - adjust Dock: System Preferences > Dock & Menu Bar > Automaticall hide and show the Dock
+   - adjust Dock: System Preferences > Dock & Menu Bar > Show recent applications in Dock (uncheck)
    - remove any unwanted apps from the Dock
    - setup a local project folder: `mkdir Projects`
 4. Install macOS Command Line Tools by running `xcode-select --install`
