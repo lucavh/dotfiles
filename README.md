@@ -30,18 +30,27 @@ Follow these install instructions to make your new setup feel like home:
    - adjust Dock: System Preferences > Dock & Menu Bar > Show recent applications in Dock (uncheck)
    - remove any unwanted apps from the Dock
    - setup a local project folder: `mkdir Projects`
-4. Install macOS Command Line Tools by running `xcode-select --install`
-5. Clone this repository into the Projects folder
+4. Install macOS Command Line Tools by running 
+
+```bash
+xcode-select --install
+```
+5. Clone this repository into the Projects folder. Git will be installed along with Xcode, so you should be able to run the following without problems:
+
+```bash
+git clone https://github.com/lucavh/dotfiles.git
+```
+
 6. From this repo, run the following command to setup Homebrew and install essentials:
 
-```
-$ source brew.sh
+```bash
+source brew.sh
 ```
 
 7. Optimize iTerm settings:
-   1. Install [`SF-Mono-Powerline` font](https://github.com/Twixes/SF-Mono-Powerline)
-   1. Set font and font-size: `iTerm > Preferences > Profiles > Text > Font > Size > 12` & `Font > SF Mono Powerline`
-   1. Set appearance theme: `iTerm > Preferences > Appearance > Theme > Minimal`
+   1. Install [`SF-Mono-Powerline` font](https://github.com/Twixes/SF-Mono-Powerline): `git clone https://github.com/Twixes/SF-Mono-Powerline.git`
+   1. Set font and font-size: `iTerm > Settings > Profiles > Text > Font > Size > 12` & `Font > SF Mono Powerline`
+   1. Set appearance theme: `iTerm > Settings > General > Appearance > Theme > Minimal`
    1. Download color profile
 
    ```
@@ -49,9 +58,14 @@ $ source brew.sh
    $ curl -O https://raw.githubusercontent.com/slavkobojanic/horizon-iterm/master/Horizon.itermcolors
    ```
 
-   1. Import and set color profile: `iTerm2 > Preferences > Profiles > Default > Colors > Color Presets > Import` and select `Horizon.itermcolors`.
+   1. Import and set color profile: `iTerm > Settings > Profiles > Default > Colors > Color Presets > Import` and select `Horizon.itermcolors`.
 
-8. Install oh-my-zsh: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+8. Install oh-my-zsh: 
+
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
 9. Install zsh plug-ins:
 
 ```
@@ -59,7 +73,7 @@ $ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom
 $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 ```
 
-10. Move the custom theme into the theme folder
+10. Move the custom theme into the theme folder (run `source ~/.zshrc` to reload settings)
 
 ```
 $ cp -R sorin_luca.zsh-theme ~/.oh-my-zsh/custom/themes/

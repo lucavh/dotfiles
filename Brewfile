@@ -5,26 +5,25 @@ tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
-tap 'mongodb/brew'
+# tap 'mongodb/brew'
 
 # Development
-brew 'autojump'
+brew 'autojump' # shell extension
 brew 'bash' 
 brew 'gh'
 brew 'git'
 brew 'git-lfs'
-brew 'go'
-brew 'htop'
-brew 'jupyterlab'
-brew 'mackup'
-brew 'mysql', restart_service: true
 brew 'tree'
-brew 'svn'
 brew 'virtualenv'
 brew 'wget'
 brew 'zsh' 
 brew 'zsh-autosuggestions'
 brew 'zsh-syntax-highlighting'
+# brew 'go'
+# brew 'htop'
+# brew 'jupyterlab'
+# brew 'mysql', restart_service: true
+# brew 'svn'
 
 # Apps
 cask '1password'
@@ -35,8 +34,8 @@ cask 'dropbox'
 cask 'google-chrome'
 cask 'iterm2'
 cask 'notable'
-# cask 'rectangle'
-cask 'setapp'
+cask 'rectangle'
+cask 'setapp;
 cask 'sketch'
 cask 'slack'
 cask 'spotify'
@@ -71,3 +70,4 @@ cask 'font-varela-round'
 
 # Mac App Store
 mas 'GoodNotes 5', id: 1444383602
+mas 'Colour Peeler', id: 1592573138
