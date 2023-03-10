@@ -30,13 +30,16 @@ brew 'zsh-syntax-highlighting'
 cask '1password'
 cask '1password-cli'
 cask 'adobe-digital-editions'
+cask 'colorsnapper'
 cask 'docker'
 cask 'dropbox'
+cask 'hiddenbar'
 cask 'google-chrome'
 cask 'iterm2'
+cask 'maccy'
+cask 'name-mangler'
 cask 'notable'
-# cask 'rectangle'
-cask 'setapp'
+cask 'rectangle'
 cask 'sketch'
 cask 'slack'
 cask 'spotify'
@@ -71,3 +74,4 @@ cask 'font-varela-round'
 
 # Mac App Store
 mas 'GoodNotes 5', id: 1444383602
+mas 'PDF Squeezer 4', id: 1502111349
