@@ -5,26 +5,25 @@ tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
-tap 'mongodb/brew'
+# tap 'mongodb/brew'
 
 # Development
-brew 'autojump'
+brew 'autojump' # shell extension
 brew 'bash' 
 brew 'gh'
 brew 'git'
 brew 'git-lfs'
-brew 'go'
-brew 'htop'
-brew 'jupyterlab'
-brew 'mackup'
-brew 'mysql', restart_service: true
 brew 'tree'
-brew 'svn'
 brew 'virtualenv'
 brew 'wget'
 brew 'zsh' 
 brew 'zsh-autosuggestions'
 brew 'zsh-syntax-highlighting'
+# brew 'go'
+# brew 'htop'
+# brew 'jupyterlab'
+# brew 'mysql', restart_service: true
+# brew 'svn'
 
 # Apps
 cask '1password'
