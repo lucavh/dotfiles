@@ -1,97 +1,77 @@
 # dotfiles
 
-This repository serves as my way to help me setup and maintain my configuration for macOS.
-Everything needed to install my preferred setup of macOS is detailed in this readme.
+This repository helps set up and maintain my macOS configuration. Follow the steps below to quickly set up a fresh macOS environment with my preferred settings and tools.
 
-## A fresh macOS setup
+## Repository Structure
 
-### Before re-install
-- Did you commit and push all changes to github?
-- Did you clean your Desktop, Downloads folder and other default folders?
-- Did you back-up your 1password security files?
-- Did you remember to export important data from your local database?
-- Did you store all license keys?
+- **bootstrap.sh**: The main entry point. Syncs files and triggers the brew installer.
+- **brew.sh**: Installs Homebrew and runs the Brewfile.
+- **Brewfile**: A list of all CLI tools and Cask apps (e.g., Ghostty, TablePlus).
+- **zshrc**: Shell configuration, aliases, and plugin initialization.
+- **ghostty/config**: Your Batman-themed terminal configuration.
 
-### Start fresh
+## A Fresh macOS Setup
 
-After going to the checklist above and making sure you backed everything up,
-go ahead and do a clean macOS installation. During setup, make sure to enable FileVault.
+### Pre-Installation Checklist
 
-### Make it feel like home
+Before starting, ensure you:
 
-Follow these install instructions to make your new setup feel like home:
+- Commit and push all changes to GitHub.
+- Clean your Desktop, Downloads, and other default folders.
+- Back up your 1Password security files.
+- Export important data from your local database.
+- Store all license keys securely.
 
-1. Update macOS to the latest version with the App Store.
-2. Install Xcode from the App Store.
-3. White Xcode is installing, you could:
-   - fix display resolution: System Preferences > Displays > Resolution > Scaled > More Space
-   - change desktop image: System Preferences > Desktop & Screensaver > Colours > #1D262A
-   - adjust Dock: System Preferences > Dock & Menu Bar > Automaticall hide and show the Dock
-   - adjust Dock: System Preferences > Dock & Menu Bar > Show recent applications in Dock (uncheck)
-   - remove any unwanted apps from the Dock
-   - setup a local project folder: `mkdir Projects`
-4. Install macOS Command Line Tools by running
+### Clean Installation
 
-```bash
-xcode-select --install
-```
-5. Clone this repository into the Projects folder. Git will be installed along with Xcode, so you should be able to run the following without problems:
+1. Perform a clean macOS installation.
+2. Enable FileVault during setup.
 
-```bash
-git clone https://github.com/lucavh/dotfiles.git
-```
+### Setting Up Your Environment
 
-6. From this repo, run the following command to setup Homebrew and install essentials:
+1. **Update macOS**: Install the latest version via the App Store.
+2. **Install Xcode Command Line Tools**: Run `xcode-select --install`.
+3. **Set Up Local Folder Structure**: `mkdir -p ~/Projects`.
+4. **Clone This Repository**:
 
-```bash
-source brew.sh
-```
-
-7. Optimize iTerm settings:
-   1. Install [`SF-Mono-Powerline` font](https://github.com/Twixes/SF-Mono-Powerline): `git clone https://github.com/Twixes/SF-Mono-Powerline.git`
-   1. Set font and font-size: `iTerm > Settings > Profiles > Text > Font > Size > 12` & `Font > SF Mono Powerline`
-   1. Set appearance theme: `iTerm > Settings > General > Appearance > Theme > Minimal`
-   1. Download color profile
-
-   ```
-   $ cd Downloads
-   $ curl -O https://raw.githubusercontent.com/slavkobojanic/horizon-iterm/master/Horizon.itermcolors
+   ```bash
+   git clone https://github.com/lucavh/dotfiles.git ~/Projects/dotfiles
+   cd ~/Projects/dotfiles
    ```
 
-   1. Import and set color profile: `iTerm > Settings > Profiles > Default > Colors > Color Presets > Import` and select `Horizon.itermcolors`.
+5. **Run the Bootstrapper**:
 
-8. Install oh-my-zsh:
+   ```bash
+   chmod +x bootstrap.sh
+   ./bootstrap.sh
+   ```
 
-```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
+   This script will install Homebrew, fetch all dependencies (e.g., Ghostty, Zoxide), and link your configuration files.
 
-9. Install zsh plug-ins:
+## Post-Installation Tweaks
 
-```
-$ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-$ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-```
+### Terminal (Ghostty) & Shell (Zsh + Zoxide)
 
-10. Move the custom theme into the theme folder (run `source ~/.zshrc` to reload settings)
+- Your terminal setup is automated with a custom Batman-inspired theme and settings defined in `ghostty/config`.
+- **Config**: Use `Cmd + Shift + ,` to reload the configuration.
+- **Jump**: Use `z [directory]` to jump to frequently used folders (powered by Zoxide).
+- **Search**: Press `Ctrl + R` for a fuzzy search of your command history (powered by fzf).
+- **Autocomplete**: Use the arrow keys to accept greyed-out suggestions.
 
-```
-$ cp -R sorin_luca.zsh-theme ~/.oh-my-zsh/custom/themes/
-```
+### macOS System Preferences
 
-11. Sync dotfiles. The bootstrapper script will pull in the latest version and copy the files to your home folder.
+- **Fix Dock**:
+  - System Settings > Desktop & Dock > Automatically hide and show the Dock: On
+  - System Settings > Desktop & Dock > Show recent applications in Dock: Off
+  - Remove any unwanted apps from the Dock.
+- **Fix Display**:
+  - Fix display resolution: System Preferences > Displays > Resolution > Scaled > More Space.
+  - Change desktop image: System Preferences > Desktop & Screensaver > Colours > #1D262A.
 
-```
-$ source bootstrap.sh
-```
+## Manual App Checklist
 
-10. Install apps manually:
-   - From SetApp:
-      - Bartender
-      - CleanMyMac X
-      - CloudMounter
-      - iStat Menu's
-      - Filepane
-      - Sip
-      - TablePlus
-   - [DisplayLink Driver](https://www.displaylink.com/downloads/macos)
+After running the setup script, manually log in or install the following apps via SetApp:
+
+- CleanMyMac X
+- Sip
+- **DisplayLink**: Download drivers manually from [DisplayLink.com](https://www.displaylink.com/).
