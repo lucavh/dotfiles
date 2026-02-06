@@ -1,6 +1,6 @@
 # dotfiles
 
-This repository serves as my way to help me setup and maintain my configuration for macOS. 
+This repository serves as my way to help me setup and maintain my configuration for macOS.
 Everything needed to install my preferred setup of macOS is detailed in this readme.
 
 ## A fresh macOS setup
@@ -10,12 +10,12 @@ Everything needed to install my preferred setup of macOS is detailed in this rea
 - Did you clean your Desktop, Downloads folder and other default folders?
 - Did you back-up your 1password security files?
 - Did you remember to export important data from your local database?
-- Did you store all license keys? 
+- Did you store all license keys?
 
 ### Start fresh
 
-After going to the checklist above and making sure you backed everything up, 
-go ahead and do a clean macOS installation. During setup, make sure to enable FileVault. 
+After going to the checklist above and making sure you backed everything up,
+go ahead and do a clean macOS installation. During setup, make sure to enable FileVault.
 
 ### Make it feel like home
 
@@ -24,13 +24,13 @@ Follow these install instructions to make your new setup feel like home:
 1. Update macOS to the latest version with the App Store.
 2. Install Xcode from the App Store.
 3. White Xcode is installing, you could:
-   - fix display resolution: System Preferences > Displays > Resolution > Scaled > More Space 
+   - fix display resolution: System Preferences > Displays > Resolution > Scaled > More Space
    - change desktop image: System Preferences > Desktop & Screensaver > Colours > #1D262A
    - adjust Dock: System Preferences > Dock & Menu Bar > Automaticall hide and show the Dock
    - adjust Dock: System Preferences > Dock & Menu Bar > Show recent applications in Dock (uncheck)
    - remove any unwanted apps from the Dock
    - setup a local project folder: `mkdir Projects`
-4. Install macOS Command Line Tools by running 
+4. Install macOS Command Line Tools by running
 
 ```bash
 xcode-select --install
@@ -60,7 +60,7 @@ source brew.sh
 
    1. Import and set color profile: `iTerm > Settings > Profiles > Default > Colors > Color Presets > Import` and select `Horizon.itermcolors`.
 
-8. Install oh-my-zsh: 
+8. Install oh-my-zsh:
 
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -85,13 +85,13 @@ $ cp -R sorin_luca.zsh-theme ~/.oh-my-zsh/custom/themes/
 $ source bootstrap.sh
 ```
 
-10. Install apps manually: 
-   - From SetApp: 
+10. Install apps manually:
+   - From SetApp:
       - Bartender
       - CleanMyMac X
       - CloudMounter
       - iStat Menu's
       - Filepane
       - Sip
-      - TablePlus 
+      - TablePlus
    - [DisplayLink Driver](https://www.displaylink.com/downloads/macos)

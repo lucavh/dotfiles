@@ -9,14 +9,14 @@ tap 'homebrew/bundle'
 
 # Development
 brew 'autojump' # shell extension
-brew 'bash' 
+brew 'bash'
 brew 'gh'
 brew 'git'
 brew 'git-lfs'
 brew 'tree'
 brew 'virtualenv'
 brew 'wget'
-brew 'zsh' 
+brew 'zsh'
 brew 'zsh-autosuggestions'
 brew 'zsh-syntax-highlighting'
 # brew 'go'

@@ -11,9 +11,9 @@ pretty_print() {
 # Installing Homebrew
 
 if ! command -v brew &>/dev/null; then
-  pretty_print "💁‍♀️ Installing Homebrew..." 
+  pretty_print "💁‍♀️ Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  
+
   if ! grep -qs "recommended by brew doctor" ~/.zshrc; then
     pretty_print "💁‍♀️ Put Homebrew location earlier in PATH..."
       printf '\n# recommended by brew doctor\n' >> ~/.zshrc
