@@ -16,7 +16,7 @@ fi
 # 4. The Sync Function
 function doIt() {
     echo "⚙️  Syncing files to home directory..."
-    
+
     mkdir -p ~/.config/ghostty
 
     # RSYNC for general files

@@ -1,6 +1,7 @@
 # dotfiles
 
-This repository helps set up and maintain my macOS configuration. Follow the steps below to quickly set up a fresh macOS environment with my preferred settings and tools.
+This repository helps set up and maintain my macOS configuration. Follow the steps below to quickly
+set up a fresh macOS environment with my preferred settings and tools.
 
 ## Repository Structure
 
@@ -46,7 +47,8 @@ Before starting, ensure you:
    ./bootstrap.sh
    ```
 
-   This script will install Homebrew, fetch all dependencies (e.g., Ghostty, Zoxide), and link your configuration files.
+   This script will install Homebrew, fetch all dependencies (e.g., Ghostty, Zoxide),
+   and link your configuration files.
 
 ## Post-Installation Tweaks
 
