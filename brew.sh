@@ -31,6 +31,10 @@ fi
 
 # Updating brew
 
+pretty_print "💁‍♀️ Cleaning up old taps..."
+brew untap homebrew/homebrew-cask-fonts 2>/dev/null || true
+brew untap homebrew/homebrew-cask-versions 2>/dev/null || true
+
 pretty_print "💁‍♀️ Updating brew formulas..."
 brew update
 
