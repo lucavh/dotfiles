@@ -22,3 +22,7 @@
 
 [pull]
 	rebase = false
+
+# Machine-specific settings (e.g. [user] name/email) live in an untracked file.
+[include]
+	path = ~/.gitconfig.local

@@ -195,6 +195,16 @@ Install via [SetApp](https://setapp.com/) subscription:
   [displaylink.com](https://www.displaylink.com/downloads) for external
   monitor support
 
+### Git Identity
+
+`.gitconfig` includes an untracked `~/.gitconfig.local` for machine-specific
+settings, so name and email stay out of this repo. Create it once per machine:
+
+```bash
+git config -f ~/.gitconfig.local user.name "Your Name"
+git config -f ~/.gitconfig.local user.email "you@example.com"
+```
+
 ## 🛠️ Maintenance
 
 ### Updating Everything
