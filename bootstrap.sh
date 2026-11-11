@@ -19,19 +19,36 @@ function doIt() {
 
     mkdir -p ~/.config/ghostty
 
-    # RSYNC for general files
+    # RSYNC for general files (repo-only and symlinked files are excluded)
     rsync --exclude ".git/" \
         --exclude ".DS_Store" \
         --exclude "bootstrap.sh" \
         --exclude "brew.sh" \
         --exclude "Brewfile" \
         --exclude "README.md" \
+        --exclude "AGENTS.md" \
+        --exclude ".beans/" \
+        --exclude ".beans.yml" \
+        --exclude ".gitignore" \
+        --exclude ".pre-commit-config.yaml" \
+        --exclude ".markdownlint.json" \
+        --exclude "zshrc" \
+        --exclude "ghostty/" \
         -avh --no-perms . ~;
 
-    # FORCE SYMLINKS for the important stuff
-    # This ensures your  edits in the repo are instant
-    ln -sf "$DOTFILES_DIR/zshrc" ~/.zshrc
-    ln -sf "$DOTFILES_DIR/ghostty/config" ~/.config/ghostty/config
+    # SYMLINKS for the important stuff, so edits in the repo are instant.
+    # An existing real file (not a symlink) is backed up first.
+    link() {
+        local src="$1" dest="$2"
+        if [ -e "$dest" ] && [ ! -L "$dest" ]; then
+            local backup="$dest.backup-$(date +%d-%m-%Y)"
+            echo "📦 Backing up $dest -> $backup"
+            mv "$dest" "$backup"
+        fi
+        ln -sfn "$src" "$dest"
+    }
+    link "$DOTFILES_DIR/zshrc" ~/.zshrc
+    link "$DOTFILES_DIR/ghostty/config" ~/.config/ghostty/config
 
     echo "✅ Setup complete! Welcome back, Luca."
     source ~/.zshrc

@@ -1,7 +1,7 @@
 ---
 # dotfiles-z7q2
 title: Fix zoxide z command setup
-status: in-progress
+status: completed
 type: bug
 priority: normal
 created_at: 2026-11-11T12:00:00Z
@@ -16,5 +16,5 @@ called, so fresh setups had an empty database.
 
 - [x] Initialise zoxide eagerly so the cd hook records directories from the first prompt
 - [x] Point dot/batcave aliases at ~/Projects/dotfiles
-- [ ] bootstrap.sh: exclude repo-only files from rsync
-- [ ] bootstrap.sh: back up an existing non-symlink ~/.zshrc before linking
+- [x] bootstrap.sh: exclude repo-only files from rsync
+- [x] bootstrap.sh: back up an existing non-symlink ~/.zshrc before linking
