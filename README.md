@@ -145,7 +145,7 @@ Your Zsh environment comes with powerful productivity enhancements:
 
 - **Reload Config**: `Cmd + Shift + ,`
 - **Font**: JetBrains Mono Nerd Font (14pt)
-- **Theme**: GitHub Dark Dimmed
+- **Theme**: One Dark Two
 - **Config Location**: `~/.config/ghostty/config`
 
 ### macOS System Settings
