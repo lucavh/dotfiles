@@ -59,6 +59,28 @@ else
   unset HA_TOKEN
 fi
 
+# Permission guard rails: merge deny/ask rules into ~/.claude/settings.json.
+# Existing settings and rules are kept; the file is only rewritten (with a
+# dated backup) when rules are actually added.
+SETTINGS="$HOME/.claude/settings.json"
+[[ -f "$SETTINGS" ]] || echo '{}' > "$SETTINGS"
+merged=$(jq -s '
+  .[0] as $cur | .[1].permissions as $add
+  | $cur
+  | .permissions.deny = ((($cur.permissions.deny // []) + $add.deny) | unique)
+  | .permissions.ask  = ((($cur.permissions.ask  // []) + $add.ask)  | unique)
+' "$SETTINGS" "$DOTFILES_DIR/claude/permissions.json") || { echo "! could not merge permissions"; exit 1; }
+norm='(.permissions.deny, .permissions.ask) |= ((. // []) | sort)'  # ignore rule order
+if [[ "$(jq -S "$norm" "$SETTINGS")" == "$(jq -S "$norm" <<< "$merged")" ]]; then
+  echo "• permission rules already present, skipping"
+else
+  backup="$SETTINGS.backup-$(date +%d-%m-%Y)"
+  [[ -e "$backup" ]] && backup="$backup-2"
+  cp "$SETTINGS" "$backup"
+  print -r -- "$merged" > "$SETTINGS"
+  echo "+ merged permission rules (backup: $backup)"
+fi
+
 echo
 echo "Next: run /mcp in Claude Code and sign in to oreilly."
 echo "Google Drive/Gmail/Calendar come from claude.ai Settings > Connectors."
