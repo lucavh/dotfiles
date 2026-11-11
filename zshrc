@@ -2,12 +2,8 @@
 BREW_PREFIX="${BREW_PREFIX:-/opt/homebrew}"
 [[ ! -d "$BREW_PREFIX" ]] && BREW_PREFIX="/usr/local"
 
-# 1. THE JUMP COMMAND (zoxide) - Lazy loaded on first use
-function z() {
-  unfunction z
-  eval "$(zoxide init zsh)"
-  z "$@"
-}
+# 1. THE JUMP COMMAND (zoxide) - initialised at the end of this file
+#    (not lazy-loaded: its cd hook must run from the start to learn directories)
 
 # 2. AUTO-SUGGESTIONS & SYNTAX HIGHLIGHTING - Load immediately but efficiently
 source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
@@ -46,3 +42,6 @@ precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats ' (%b)'
 setopt PROMPT_SUBST
 PROMPT='%F{cyan}%1~%f%F{yellow}${vcs_info_msg_0_}%f > '
+
+# 9. ZOXIDE (must stay last: it hooks into cd to learn visited directories)
+command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
