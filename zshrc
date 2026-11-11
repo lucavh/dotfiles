@@ -2,6 +2,11 @@
 BREW_PREFIX="${BREW_PREFIX:-/opt/homebrew}"
 [[ ! -d "$BREW_PREFIX" ]] && BREW_PREFIX="/usr/local"
 
+# 0. USER BIN DIRECTORIES (Claude Code, pipx and poetry install here)
+for dir in "$HOME/.local/bin" "$HOME/.poetry/bin"; do
+  [[ -d "$dir" ]] && export PATH="$dir:$PATH"
+done
+
 # 1. THE JUMP COMMAND (zoxide) - initialised at the end of this file
 #    (not lazy-loaded: its cd hook must run from the start to learn directories)
 
