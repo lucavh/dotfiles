@@ -223,56 +223,6 @@ git pull origin main
 Configuration files are symlinked, so direct edits to `~/.zshrc` or
 `~/.config/ghostty/config` automatically update the repository files.
 
-## 🫘 Task Tracking with Beans
-
-This project uses [Beans](https://github.com/hmans/beans) - an issue tracker
-designed for you, your team, and coding agents. Tasks are stored as Markdown
-files in the `.beans/` directory.
-
-### Quick Start
-
-```bash
-# List all tasks
-beans list
-
-# Open interactive TUI
-beans tui
-
-# Create a new task
-beans create "Task title" -t task -d "Description"
-
-# Query tasks with GraphQL
-beans query '{ beans { id title status type } }'
-
-# Get AI agent instructions
-beans prime
-```
-
-### Common Commands
-
-| Command | Description |
-|---------|-------------|
-| `beans list` | List all beans |
-| `beans tui` | Open interactive terminal UI |
-| `beans create "Title" -t <type>` | Create a new bean |
-| `beans show <id>` | View bean details |
-| `beans update <id> --status <status>` | Update bean status |
-| `beans query '<graphql>'` | Execute GraphQL query |
-
-### Bean Types
-
-- **milestone** - Release targets or checkpoints
-- **epic** - Thematic containers for related work
-- **feature** - User-facing capabilities
-- **bug** - Issues that need fixing
-- **task** - Concrete work items
-
-### Integration with AI Agents
-
-This repository includes `AGENTS.md` with instructions for coding agents like
-GitHub Copilot CLI. The agents will automatically create, update, and track
-beans as they work on your project.
-
 ## 📚 Useful Aliases
 
 | Alias | Command | Description |

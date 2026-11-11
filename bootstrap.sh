@@ -26,9 +26,6 @@ function doIt() {
         --exclude "brew.sh" \
         --exclude "Brewfile" \
         --exclude "README.md" \
-        --exclude "AGENTS.md" \
-        --exclude ".beans/" \
-        --exclude ".beans.yml" \
         --exclude ".gitignore" \
         --exclude ".pre-commit-config.yaml" \
         --exclude ".markdownlint.json" \
