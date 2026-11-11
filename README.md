@@ -125,6 +125,9 @@ Before wiping your machine:
    cd ~/Projects/dotfiles
    chmod +x bootstrap.sh
    ./bootstrap.sh
+
+   # Claude Code MCP servers (after logging in to claude and gh)
+   ./mcp.sh
    ```
 
 ## ⚙️ Post-Installation Configuration

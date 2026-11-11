@@ -31,6 +31,8 @@ function doIt() {
         --exclude ".markdownlint.json" \
         --exclude "zshrc" \
         --exclude "ghostty/" \
+        --exclude "mcp.sh" \
+        --exclude "claude/" \
         -avh --no-perms . ~;
 
     # SYMLINKS for the important stuff, so edits in the repo are instant.
