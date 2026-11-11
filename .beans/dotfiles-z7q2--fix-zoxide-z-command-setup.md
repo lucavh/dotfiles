@@ -15,6 +15,6 @@ called, so fresh setups had an empty database.
 ## Checklist
 
 - [x] Initialise zoxide eagerly so the cd hook records directories from the first prompt
-- [ ] Point dot/batcave aliases at ~/Projects/dotfiles
+- [x] Point dot/batcave aliases at ~/Projects/dotfiles
 - [ ] bootstrap.sh: exclude repo-only files from rsync
 - [ ] bootstrap.sh: back up an existing non-symlink ~/.zshrc before linking

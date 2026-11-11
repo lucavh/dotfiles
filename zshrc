@@ -32,8 +32,8 @@ setopt APPEND_HISTORY     # Append to history file rather than overwriting
 alias gcfg='nano ~/.config/ghostty/config'
 alias zcfg='nano ~/.zshrc'
 alias reload='source ~/.zshrc'
-alias batcave='cd ~/src/dotfiles'
-alias dot='cd ~/src/dotfiles'
+alias batcave='cd ~/Projects/dotfiles'
+alias dot='cd ~/Projects/dotfiles'
 
 # 8. CUSTOM PROMPT
 # Shows: (venv) directory (branch) >
